@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Extended CV - Iddah Chelangat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --purple-900: #1a0a2e;
+      --purple-700: #7b2d8b;
+      --purple-500: #9d4edd;
+      --purple-300: #c77dff;
+      --ink: #1f1330;
+      --muted: #6f5f84;
+      --line: #eadbf6;
+      --paper: #ffffff;
+      --bg: #f4e9ff;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--ink);
+      background: radial-gradient(circle at top right, #f8efff, var(--bg));
+      line-height: 1.6;
+    }
+
+    .top-actions {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 20px;
+      background: rgba(26, 10, 46, 0.94);
+      color: #fff;
+      backdrop-filter: blur(6px);
+    }
+
+    .top-actions .note {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      border: 1px solid transparent;
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--purple-500), var(--purple-300));
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border-color: var(--purple-300);
+      color: var(--purple-300);
+    }
+
+    .sheet-wrap {
+      width: min(100%, 960px);
+      margin: 24px auto 40px;
+      padding: 0 12px;
+    }
+
+    .sheet {
+      background: var(--paper);
+      box-shadow: 0 10px 44px rgba(44, 15, 74, 0.16);
+      margin-bottom: 16px;
+      border-radius: 8px;
+      overflow: hidden;
+      min-height: 297mm;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sheet:last-child { margin-bottom: 0; }
+
+    .header {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 20px;
+      align-items: center;
+      padding: 26px 28px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(120deg, #fbf4ff 0%, #fff 100%);
+    }
+
+    .photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--purple-300);
+      box-shadow: 0 0 0 6px rgba(199, 125, 255, 0.14);
+    }
+
+    .name {
+      margin: 0;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2rem;
+      line-height: 1.1;
+      color: var(--purple-900);
+    }
+
+    .title {
+      margin: 6px 0 10px;
+      font-size: 0.88rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--purple-500);
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .contact-row span, .contact-row a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      padding: 24px 28px 28px;
+      flex: 1;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    .section {
+      margin: 0;
+    }
+
+    .section h2 {
+      margin: 0 0 10px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.84rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--purple-500);
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--line);
+    }
+
+    .summary {
+      margin: 0;
+      font-size: 0.92rem;
+      color: #3e2a5a;
+    }
+
+    .entry {
+      margin-bottom: 12px;
+    }
+
+    .entry:last-child { margin-bottom: 0; }
+
+    .entry-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: baseline;
+      margin-bottom: 3px;
+    }
+
+    .entry h3 {
+      margin: 0;
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .date {
+      font-size: 0.75rem;
+      color: var(--purple-700);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .subtitle {
+      margin: 0 0 5px;
+      font-size: 0.83rem;
+      color: var(--purple-700);
+      font-weight: 600;
+    }
+
+    .entry p {
+      margin: 0;
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .entry ul {
+      margin: 6px 0 0;
+      padding-left: 16px;
+    }
+
+    .entry li {
+      margin-bottom: 3px;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .chip {
+      font-size: 0.75rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 3px 9px;
+      color: var(--purple-700);
+      background: #faf4ff;
+      font-weight: 600;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px 14px;
+      font-size: 0.84rem;
+      color: #4f3a67;
+    }
+
+    .skills-grid div {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .bar {
+      width: 100%;
+      height: 6px;
+      border-radius: 99px;
+      background: #f0e3fb;
+      overflow: hidden;
+      margin-top: 3px;
+    }
+
+    .bar > span {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, var(--purple-500), var(--purple-300));
+    }
+
+    .project {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px;
+      margin-bottom: 10px;
+      background: #fff;
+    }
+
+    .project:last-child { margin-bottom: 0; }
+
+    .project h3 {
+      margin: 0 0 4px;
+      font-size: 0.95rem;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .project p {
+      margin: 0 0 7px;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .project a {
+      color: var(--purple-700);
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .cert-list {
+      margin: 0;
+      padding-left: 16px;
+    }
+
+    .cert-list li {
+      margin-bottom: 6px;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .cert-list a {
+      color: var(--purple-700);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .footer-note {
+      margin-top: auto;
+      padding: 10px 28px 16px;
+      font-size: 0.73rem;
+      color: #8a7b9c;
+      border-top: 1px solid var(--line);
+    }
+
+    @media print {
+      @page { size: A4 portrait; margin: 0; }
+
+      body {
+        background: #fff;
+      }
+
+      .top-actions {
+        display: none !important;
+      }
+
+      .sheet-wrap {
+        margin: 0;
+        width: 100%;
+        padding: 0;
+      }
+
+      .sheet {
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+        width: 210mm;
+        min-height: 297mm;
+        page-break-after: always;
+      }
+
+      .sheet:last-child {
+        page-break-after: auto;
+      }
+
+      .header {
+        padding: 18mm 14mm 7mm;
+      }
+
+      .content {
+        padding: 8mm 14mm 7mm;
+        gap: 6mm;
+      }
+
+      .footer-note {
+        padding: 4mm 14mm 6mm;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+
+    @media (max-width: 740px) {
+      .header {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .photo {
+        margin: 0 auto;
+      }
+
+      .contact-row {
+        justify-content: center;
+      }
+
+      .content {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-actions">
+    <div class="note">Extended CV (2 pages) for detailed applications and interview packets.</div>
+    <div class="actions">
+      <a href="index.html" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Portfolio</a>
+      <a href="cv.html" class="btn btn-secondary"><i class="fas fa-file-lines"></i> 1-Page CV</a>
+      <button class="btn" onclick="window.print()"><i class="fas fa-print"></i> Print / Save PDF</button>
+    </div>
+  </div>
+
+  <div class="sheet-wrap">
+    <section class="sheet">
+      <header class="header">
+        <img src="assets/photo.png" alt="Iddah Chelangat" class="photo" />
+        <div>
+          <h1 class="name">Iddah Chelangat</h1>
+          <p class="title">Full Stack Developer</p>
+          <div class="contact-row">
+            <span><i class="fas fa-envelope"></i> iddahchelangat1@gmail.com</span>
+            <span><i class="fab fa-whatsapp"></i> +254 112 877 755</span>
+            <span><i class="fas fa-location-dot"></i> Eldoret, Kenya</span>
+            <a href="https://github.com/Iddah-chela" target="_blank" rel="noopener"><i class="fab fa-github"></i> github.com/Iddah-chela</a>
+            <a href="https://linkedin.com/in/iddah-supergirl-662a89255" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> linkedin.com/in/iddah-supergirl-662a89255</a>
+          </div>
+        </div>
+      </header>
+
+      <div class="content">
+        <section class="section full">
+          <h2>Professional Summary</h2>
+          <p class="summary">
+            Final-year university student and full stack developer focused on building practical, user-friendly web products.
+            Experienced in shipping end-to-end projects from UI implementation and API design to deployment and iteration.
+            Strong interest in scalable application architecture, developer experience, and solving local community problems with technology.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Education</h2>
+          <div class="entry">
+            <div class="entry-top">
+              <h3>University of Eldoret</h3>
+              <span class="date">2022 - Dec 2026</span>
+            </div>
+            <p class="subtitle">BSc in Information Technology</p>
+            <p>
+              Coursework includes software engineering, database systems, web technologies, networking,
+              and systems analysis. Built practical projects while balancing academic work and self-directed learning.
+            </p>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Core Skills</h2>
+          <div class="skills-grid">
+            <div><span>HTML/CSS</span></div>
+            <div><span>JavaScript</span></div>
+            <div><span>React</span></div>
+            <div><span>Node.js</span></div>
+            <div><span>Express.js</span></div>
+            <div><span>React Native</span></div>
+            <div><span>PostgreSQL</span></div>
+            <div><span>MongoDB</span></div>
+          </div>
+          <div class="entry" style="margin-top:10px;">
+            <p class="subtitle">Skill Depth (self-assessed)</p>
+            <p style="font-size:0.78rem; color:#7a6a8e; margin:0 0 3px;">JavaScript</p>
+            <div class="bar"><span style="width:85%"></span></div>
+            <p style="font-size:0.78rem; color:#7a6a8e; margin:7px 0 3px;">React</p>
+            <div class="bar"><span style="width:78%"></span></div>
+            <p style="font-size:0.78rem; color:#7a6a8e; margin:7px 0 3px;">Node.js / Express</p>
+            <div class="bar"><span style="width:74%"></span></div>
+            <p style="font-size:0.78rem; color:#7a6a8e; margin:7px 0 3px;">SQL / PostgreSQL</p>
+            <div class="bar"><span style="width:70%"></span></div>
+          </div>
+        </section>
+
+        <section class="section full">
+          <h2>Experience</h2>
+          <div class="entry">
+            <div class="entry-top">
+              <h3>Independent Full Stack Projects</h3>
+              <span class="date">2023 - Present</span>
+            </div>
+            <p class="subtitle">Self-Directed Developer</p>
+            <ul>
+              <li>Designed and deployed live products from scratch, including frontend, backend, and database workflows.</li>
+              <li>Implemented responsive interfaces, authentication flows, API integrations, and production deployment fixes.</li>
+              <li>Practiced iterative delivery by collecting user feedback and improving UX, performance, and reliability over time.</li>
+              <li>Maintained GitHub repositories with consistent commits, version control hygiene, and feature-based branching.</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <div class="footer-note">
+        Page 1 of 2 · Extended CV 
+      </div>
+    </section>
+
+    <section class="sheet">
+      <header class="header">
+        <img src="assets/photo.png" alt="Iddah Chelangat" class="photo" />
+        <div>
+          <h1 class="name">Iddah Chelangat</h1>
+          <p class="title">Selected Projects, Certifications & Additional Details</p>
+          <div class="contact-row">
+            <span><i class="fas fa-envelope"></i> iddahchelangat1@gmail.com</span>
+            <span><i class="fab fa-whatsapp"></i> +254 112 877 755</span>
+            <span><i class="fas fa-location-dot"></i> Eldoret, Kenya</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="content">
+        <section class="section full">
+          <h2>Selected Projects</h2>
+          <article class="project">
+            <h3>Holy Verse</h3>
+            <p>
+              A minimalist Bible reading web app focused on accessibility and distraction-free scripture exploration.
+              Built to support users seeking a simple, fast spiritual reading experience.
+            </p>
+            <div class="chips">
+              <span class="chip">JavaScript</span>
+              <span class="chip">HTML/CSS</span>
+              <span class="chip">Firebase</span>
+              <span class="chip">Node.js</span>
+              <span class="chip">Express.js</span>
+              <span class="chip">SQL</span>
+            </div>
+            <p style="margin-top:7px;"><a href="https://holy-verse.web.app" target="_blank" rel="noopener">Live: holy-verse.web.app</a></p>
+          </article>
+
+          <article class="project">
+            <h3>PataKejaa</h3>
+            <p>
+              A Kenyan housing platform connecting renters and landlords through easy listing discovery and contact workflows.
+              Designed with local context in mind, balancing performance and ease of use.
+            </p>
+            <div class="chips">
+              <span class="chip">React</span>
+              <span class="chip">Node.js</span>
+              <span class="chip">Express.js</span>
+              <span class="chip">MongoDB</span>
+              <span class="chip">Tailwind CSS</span>
+            </div>
+            <p style="margin-top:7px;"><a href="https://patakejaa.co.ke" target="_blank" rel="noopener">Live: patakejaa.co.ke</a></p>
+          </article>
+
+          <article class="project">
+            <h3>Student Marketplace (In Progress)</h3>
+            <p>
+              A campus-focused commerce app where students can buy, sell, and exchange household essentials and services.
+              Emphasis on affordability, trust, and local discovery.
+            </p>
+            <div class="chips">
+              <span class="chip">React</span>
+              <span class="chip">Node.js</span>
+              <span class="chip">Express.js</span>
+              <span class="chip">MongoDB</span>
+            </div>
+            
+          </article>
+
+          <article class="project">
+            <h3>Emergency App (In Progress)</h3>
+            <p>
+              A mobile-first emergency support app with one-tap alerts, location sharing, and rapid contact routing during crises.
+            </p>
+            <div class="chips">
+              <span class="chip">React Native</span>
+              <span class="chip">Node.js</span>
+              <span class="chip">Express.js</span>
+              <span class="chip">SQLite</span>
+            </div>
+          </article>
+        </section>
+
+        <section class="section">
+          <h2>Certifications</h2>
+          <ul class="cert-list">
+            <li>
+              <strong>SoloLearn - Introduction to C++</strong><br />
+              <a href="https://api2.sololearn.com/v2/certificates/CT-RPSUYZDH/image/png?t=639088401155566960" target="_blank" rel="noopener">View certificate</a>
+            </li>
+            <li>
+              <strong>SoloLearn - HTML</strong><br />
+              <a href="https://api2.sololearn.com/v2/certificates/CC-HUHIJHKA/image/png?t=639088401404625700" target="_blank" rel="noopener">View certificate</a>
+            </li>
+            
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>Additional Information</h2>
+          <div class="entry">
+            <h3 style="font-size:0.9rem; margin:0 0 5px;">Languages</h3>
+            <p>English, Swahili.</p>
+          </div>
+          <div class="entry">
+            <h3 style="font-size:0.9rem; margin:0 0 5px;">Interests</h3>
+            <p>Reading novels, watching films, exploring new technologies, and continuous learning.</p>
+          </div>
+          <div class="entry">
+            <h3 style="font-size:0.9rem; margin:0 0 5px;">References</h3>
+            <p>Available on request.</p>
+          </div>
+        </section>
+      </div>
+
+      <div class="footer-note">
+        Page 2 of 2 · Extended CV · Tip: include quantifiable outcomes per project to strengthen recruiter impact.
+      </div>
+    </section>
+  </div>
+</body>
+</html>
