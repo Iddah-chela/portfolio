@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV — Iddah Chelangat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* ======= VARIABLES ======= */
+    :root {
+      --purple:      #7b2d8b;
+      --purple-mid:  #9d4edd;
+      --purple-light:#c77dff;
+      --pink:        #f72585;
+      --bg:          #ffffff;
+      --sidebar-bg:  #1a0a2e;
+      --text:        #1a0a2e;
+      --text-muted:  #6b5a7a;
+      --border:      #e8daf5;
+      --accent-line: #c77dff;
+    }
+
+    /* ======= RESET ======= */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f3e8ff;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* ======= NO-PRINT CONTROLS ======= */
+    .print-bar {
+      background: var(--sidebar-bg);
+      color: #fff;
+      padding: 12px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .print-bar p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.65);
+    }
+    .print-bar strong { color: #c77dff; }
+    .print-bar-actions { display: flex; gap: 12px; }
+    .btn-print {
+      padding: 8px 22px;
+      background: linear-gradient(135deg, #9d4edd, #c77dff);
+      color: #fff;
+      border: none;
+      border-radius: 100px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s;
+      display: flex; align-items: center; gap: 7px;
+    }
+    .btn-print:hover { opacity: 0.85; }
+    .btn-back {
+      padding: 8px 22px;
+      background: transparent;
+      color: #c77dff;
+      border: 1.5px solid #c77dff;
+      border-radius: 100px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex; align-items: center; gap: 7px;
+    }
+    .btn-back:hover { background: rgba(199,125,255,0.1); }
+
+    /* ======= CV WRAPPER ======= */
+    .cv-page {
+      max-width: 1020px;
+      margin: 28px auto;
+      background: var(--bg);
+      box-shadow: 0 12px 60px rgba(123,45,139,0.18);
+      border-radius: 10px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+    }
+
+    /* ======= SIDEBAR ======= */
+    .cv-sidebar {
+      background: var(--sidebar-bg);
+      color: #f0e8ff;
+      padding: 40px 28px;
+    }
+
+    .cv-photo-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+    .cv-photo {
+      width: 110px; height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #9d4edd;
+      box-shadow: 0 0 20px rgba(157,78,221,0.4);
+      margin-bottom: 14px;
+    }
+    .cv-photo-placeholder {
+      width: 110px; height: 110px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #4a1080, #9d4edd);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #fff;
+      border: 3px solid #9d4edd;
+      margin-bottom: 14px;
+    }
+    .cv-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-align: center;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .cv-title {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c77dff;
+      text-align: center;
+    }
+
+    .cv-section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #c77dff;
+      border-bottom: 1px solid rgba(199,125,255,0.25);
+      padding-bottom: 6px;
+      margin-bottom: 14px;
+      margin-top: 26px;
+    }
+    .cv-section-title:first-of-type { margin-top: 0; }
+
+    /* Contact list */
+    .cv-contact-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .cv-contact-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.8rem; color: #c8b4e3; }
+    .cv-contact-list li i {
+      color: #9d4edd;
+      width: 14px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .cv-contact-list a { color: #c8b4e3; word-break: break-all; }
+    .cv-contact-list a:hover { color: #c77dff; }
+
+    /* Skills list */
+    .cv-skills-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .cv-skills-list li {
+      font-size: 0.82rem;
+      color: #c8b4e3;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .skill-bar-outer {
+      flex: 1;
+      height: 5px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 3px;
+      overflow: hidden;
+      min-width: 60px;
+    }
+    .skill-bar-inner {
+      height: 100%;
+      background: linear-gradient(90deg, #9d4edd, #c77dff);
+      border-radius: 3px;
+    }
+
+    /* Certs on sidebar */
+    .cv-certs-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .cv-certs-list li { font-size: 0.8rem; color: #c8b4e3; display: flex; flex-direction: column; gap: 2px; }
+    .cv-certs-list li strong { color: #f0e8ff; font-size: 0.82rem; }
+    .cv-certs-list li a { color: #c77dff; font-size: 0.75rem; }
+
+    /* ======= MAIN CONTENT ======= */
+    .cv-main {
+      padding: 40px 36px;
+    }
+
+    .cv-main-section { margin-bottom: 30px; }
+    .cv-main-section:last-child { margin-bottom: 0; }
+
+    .cv-main-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--purple-mid);
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 6px;
+      margin-bottom: 18px;
+      position: relative;
+    }
+    .cv-main-title::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0;
+      width: 40px; height: 2px;
+      background: var(--accent-line);
+    }
+
+    /* Summary */
+    .cv-summary { font-size: 0.88rem; color: #3a2050; line-height: 1.8; }
+
+    /* Experience / Education items */
+    .cv-entry { margin-bottom: 20px; }
+    .cv-entry:last-child { margin-bottom: 0; }
+
+    .cv-entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 4px;
+      flex-wrap: wrap;
+    }
+    .cv-entry-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .cv-entry-date {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--purple-mid);
+      white-space: nowrap;
+      background: #f3e8ff;
+      padding: 2px 10px;
+      border-radius: 100px;
+    }
+    .cv-entry-sub {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--purple);
+      margin-bottom: 6px;
+    }
+    .cv-entry p {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .cv-entry ul {
+      margin-top: 6px;
+      padding-left: 16px;
+    }
+    .cv-entry ul li {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 3px;
+    }
+
+    /* Projects */
+    .cv-project { margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+    .cv-project:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+    .cv-project-header {
+      display: flex; align-items: center; gap: 10px; margin-bottom: 4px; flex-wrap: wrap;
+    }
+    .cv-project-header h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .cv-project-link {
+      font-size: 0.75rem;
+      color: var(--purple-mid);
+      font-weight: 600;
+      display: flex; align-items: center; gap: 4px;
+    }
+    .cv-project p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .cv-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .cv-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--purple);
+      background: #f3e8ff;
+      border: 1px solid var(--border);
+      padding: 2px 9px;
+      border-radius: 100px;
+    }
+
+    /* ======= PRINT STYLES ======= */
+    @media print {
+      @page { size: A4 portrait; margin: 0; }
+
+      html, body {
+        width: 210mm;
+        height: 297mm;
+        margin: 0;
+        padding: 0;
+        background: #fff;
+        overflow: hidden;
+      }
+
+      .print-bar { display: none !important; }
+
+      .cv-page {
+        width: 210mm;
+        min-height: 297mm;
+        height: 297mm;
+        margin: 0;
+        max-width: none;
+        border-radius: 0;
+        box-shadow: none;
+        overflow: hidden;
+      }
+
+      .cv-sidebar {
+        padding: 28px 20px;
+      }
+
+      .cv-main {
+        padding: 28px 24px;
+      }
+
+      .cv-main-section {
+        margin-bottom: 18px;
+      }
+
+      .cv-photo {
+        width: 96px;
+        height: 96px;
+      }
+
+      .cv-section-title {
+        margin-top: 16px;
+      }
+
+      .cv-contact-list,
+      .cv-skills-list,
+      .cv-certs-list {
+        gap: 6px;
+      }
+
+      .cv-summary,
+      .cv-entry p,
+      .cv-entry ul li,
+      .cv-project p {
+        font-size: 0.78rem;
+        line-height: 1.5;
+      }
+
+      .cv-entry {
+        margin-bottom: 12px;
+      }
+
+      .cv-project {
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+      }
+    }
+
+    /* ======= RESPONSIVE ======= */
+    @media (max-width: 640px) {
+      .cv-page { grid-template-columns: 1fr; }
+      .cv-sidebar { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Print bar (hidden when printing) -->
+  <div class="print-bar">
+    <p>
+      <strong>Iddah Chelangat — CV</strong> &nbsp;·&nbsp;
+      To save as PDF: click <strong>Print / Save as PDF</strong> → change destination to <strong>Save as PDF</strong>
+    </p>
+    <div class="print-bar-actions">
+      <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> Portfolio</a>
+      <button class="btn-print" onclick="window.print()">
+        <i class="fas fa-download"></i> Print / Save as PDF
+      </button>
+    </div>
+  </div>
+
+  <!-- CV Page -->
+  <div class="cv-page">
+
+    <!-- ===== SIDEBAR ===== -->
+    <aside class="cv-sidebar">
+
+      <!-- Photo + Name -->
+      <div class="cv-photo-wrap">
+        <!-- PLACEHOLDER: Make sure assets/photo.jpg exists -->
+        <img src="assets/photo.png" alt="Iddah Chelangat" class="cv-photo"
+             onerror="this.style.display='none'; document.querySelector('.cv-photo-placeholder').style.display='flex'" />
+        <div class="cv-photo-placeholder" style="display:none;">IC</div>
+        <p class="cv-name">Iddah Chelangat</p>
+        <p class="cv-title">Full Stack Developer</p>
+      </div>
+
+      <!-- Contact -->
+      <p class="cv-section-title">Contact</p>
+      <ul class="cv-contact-list">
+        <li>
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:iddahchelangat1@gmail.com">iddahchelangat1@gmail.com</a>
+        </li>
+        <li>
+          <i class="fab fa-whatsapp"></i>
+          <a href="https://wa.me/254112877755">+254 112 877 755</a>
+        </li>
+        <li>
+          <i class="fab fa-linkedin"></i>
+          <a href="https://linkedin.com/in/iddah-supergirl-662a89255" target="_blank" rel="noopener">
+            linkedin.com/in/iddah-supergirl
+          </a>
+        </li>
+        <li>
+          <i class="fab fa-github"></i>
+          <a href="https://github.com/Iddah-chela" target="_blank" rel="noopener">
+            github.com/Iddah-chela
+          </a>
+        </li>
+        <li>
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Eldoret, Kenya</span>
+        </li>
+      </ul>
+
+      <!-- Skills -->
+      <p class="cv-section-title">Skills</p>
+      <ul class="cv-skills-list">
+        <li>HTML5 <div class="skill-bar-outer"><div class="skill-bar-inner" style="width:95%"></div></div></li>
+        <li>CSS3 <div class="skill-bar-outer"><div class="skill-bar-inner" style="width:90%"></div></div></li>
+        <li>JavaScript <div class="skill-bar-outer"><div class="skill-bar-inner" style="width:85%"></div></div></li>
+        <li>React <div class="skill-bar-outer"><div class="skill-bar-inner" style="width:75%"></div></div></li>
+        <li>Node.js <div class="skill-bar-outer"><div class="skill-bar-inner" style="width:72%"></div></div></li>
+        <li>PostgreSQL <div class="skill-bar-outer"><div class="skill-bar-inner" style="width:65%"></div></div></li>
+        <li>C++ <div class="skill-bar-outer"><div class="skill-bar-inner" style="width:55%"></div></div></li>
+        <li>MongoDB <div class="skill-bar-outer"><div class="skill-bar-inner" style="width:55%"></div></div></li>
+        <li>React Native <div class="skill-bar-outer"><div class="skill-bar-inner" style="width:60%"></div></div></li>
+        <li>Tailwind CSS <div class="skill-bar-outer"><div class="skill-bar-inner" style="width:50%"></div></div></li>
+        <!-- PLACEHOLDER: Adjust skill percentages to be accurate to your level -->
+      </ul>
+
+      <!-- Certifications -->
+      <p class="cv-section-title">Certifications</p>
+      <ul class="cv-certs-list">
+        <li>
+          <strong>Introduction to C++</strong>
+          SoloLearn
+          <!-- PLACEHOLDER: Replace # with your real certificate link -->
+          <a href="https://api2.sololearn.com/v2/certificates/CT-RPSUYZDH/image/png?t=639088401155566960" target="_blank" rel="noopener">View →</a>
+        </li>
+        <li>
+          <strong>HTML</strong>
+          SoloLearn
+          <!-- PLACEHOLDER: Replace # with your real certificate link -->
+          <a href="https://api2.sololearn.com/v2/certificates/CC-HUHIJHKA/image/png?t=639088401404625700" target="_blank" rel="noopener">View →</a>
+        </li>
+        
+        <!-- PLACEHOLDER: Add more certificates here -->
+      </ul>
+
+    </aside>
+
+    <!-- ===== MAIN ===== -->
+    <main class="cv-main">
+
+      <!-- Professional Summary -->
+      <div class="cv-main-section">
+        <p class="cv-main-title">Profile</p>
+        <p class="cv-summary">
+          Final-year Computer Science student at the University of Eldoret (graduating December 2026)
+          with hands-on experience building full-stack web applications. I design, develop, and deploy
+          real-world projects using JavaScript, React, Node.js, and PostgreSQL. Passionate about clean
+          code, great UX, and shipping products people love.
+          <!-- PLACEHOLDER: Personalise or expand this summary to better reflect your story -->
+        </p>
+      </div>
+
+      <!-- Education -->
+      <div class="cv-main-section">
+        <p class="cv-main-title">Education</p>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <span class="cv-entry-title">University of Eldoret</span>
+            <!-- PLACEHOLDER: Confirm exact start year -->
+            <span class="cv-entry-date">2022 — Dec 2026</span>
+          </div>
+          <p class="cv-entry-sub">
+            BSc Computer Science
+            <!-- PLACEHOLDER: Confirm your exact degree title -->
+          </p>
+          <p>
+            Core coursework including data structures, algorithms, software engineering,
+            database systems, and web development. Graduated with distinction in practical projects.
+            <!-- PLACEHOLDER: Adjust this line to reflect your actual standing / highlights -->
+          </p>
+        </div>
+
+        <!-- PLACEHOLDER: Add secondary school below if you'd like
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <span class="cv-entry-title">School Name</span>
+            <span class="cv-entry-date">Year — Year</span>
+          </div>
+          <p class="cv-entry-sub">KCSE · Grade: — PLACEHOLDER</p>
+        </div>
+        -->
+      </div>
+
+      <!-- Experience -->
+      <div class="cv-main-section">
+        <p class="cv-main-title">Experience</p>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <span class="cv-entry-title">Self-Directed Projects</span>
+            <span class="cv-entry-date">2023 — Present</span>
+          </div>
+          <p class="cv-entry-sub">Full Stack Developer (Independent)</p>
+          <ul>
+            <li>Built and deployed <strong>Holy Verse</strong> (holy-verse.web.app) — a Bible reading web app.</li>
+            <li>Built and deployed <strong>Patakejaa</strong> (patakejaa.co.ke) — a Kenyan web platform.</li>
+            <li>Managed the full development lifecycle: design, development, deployment, and iteration.</li>
+          </ul>
+        </div>
+
+        <!-- PLACEHOLDER: Add internships, attachments, or freelance gigs below
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <span class="cv-entry-title">Company Name</span>
+            <span class="cv-entry-date">Month Year — Month Year</span>
+          </div>
+          <p class="cv-entry-sub">Role Title</p>
+          <ul>
+            <li>PLACEHOLDER: What you did and what you achieved.</li>
+            <li>PLACEHOLDER: Impact or outcome.</li>
+          </ul>
+        </div>
+        -->
+      </div>
+
+      <!-- Projects -->
+      <div class="cv-main-section">
+        <p class="cv-main-title">Projects</p>
+
+        <div class="cv-project">
+          <div class="cv-project-header">
+            <h3>Holy Verse</h3>
+            <a href="https://holy-verse.web.app" target="_blank" rel="noopener" class="cv-project-link">
+              <i class="fas fa-external-link-alt"></i> holy-verse.web.app
+            </a>
+          </div>
+          <p>
+            <!-- PLACEHOLDER: Write 1-2 sentences describing Holy Verse -->
+            A web app for reading and exploring Bible verses with a clean, distraction-free interface.
+          </p>
+          <div class="cv-tags">
+            <!-- PLACEHOLDER: Update with real stack -->
+            <span class="cv-tag">JavaScript</span>
+            <span class="cv-tag">HTML/CSS</span>
+            <span class="cv-tag">Firebase</span>
+          </div>
+        </div>
+
+        <div class="cv-project">
+          <div class="cv-project-header">
+            <h3>Patakejaa</h3>
+            <a href="https://patakejaa.co.ke" target="_blank" rel="noopener" class="cv-project-link">
+              <i class="fas fa-external-link-alt"></i> patakejaa.co.ke
+            </a>
+          </div>
+          <p>
+            <!-- PLACEHOLDER: Write 1-2 sentences describing Patakejaa -->
+            A Kenyan web platform built to serve a local audience, focusing on performance and usability.
+          </p>
+          <div class="cv-tags">
+            <!-- PLACEHOLDER: Update with real stack -->
+            <span class="cv-tag">JavaScript</span>
+            <span class="cv-tag">Node.js</span>
+            <span class="cv-tag">HTML/CSS</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- References (optional) -->
+      <div class="cv-main-section">
+        <p class="cv-main-title">References</p>
+        <p style="font-size:0.83rem; color:#6b5a7a;">
+          <!-- PLACEHOLDER: Add 1-2 academic or professional references here, or remove this section -->
+          Available on request.
+        </p>
+      </div>
+
+    </main>
+
+  </div><!-- end .cv-page -->
+
+</body>
+</html>

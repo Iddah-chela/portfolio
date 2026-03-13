@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iddah Chelangat — Full Stack Developer</title>
+  <meta name="description" content="Full Stack Developer from Eldoret, Kenya. Building websites and web apps." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Background canvas for particles -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- ======= NAVBAR ======= -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">IC</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#certifications">Certs</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <i class="fas fa-sun" id="themeIcon"></i>
+        </button>
+        <a href="cv.html" target="_blank" class="btn-cv">
+          <i class="fas fa-download"></i> CV
+        </a>
+        <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+      <a href="cv.html" target="_blank">Download CV</a>
+    </div>
+  </nav>
+
+  <!-- ======= HERO ======= -->
+  <section id="hero">
+    <div class="hero-container">
+      <div class="hero-text">
+        <p class="hero-greeting">Hi there, I'm 👋</p>
+        <h1 class="hero-name">Iddah Chelangat</h1>
+        <div class="hero-title-wrap">
+          <span class="hero-title-prefix">I'm a </span>
+          <span class="typewriter" id="typewriter"></span><span class="cursor">|</span>
+        </div>
+        <p class="hero-bio">
+          Building digital experiences from <strong>Eldoret, Kenya 🇰🇪</strong>.<br />
+          I craft fast, functional, and beautiful websites and web apps.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">View My Work</a>
+          <a href="#contact" class="btn-secondary">Get In Touch</a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://github.com/Iddah-chela" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/iddah-supergirl-662a89255" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://wa.me/254112877755" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="mailto:iddahchelangat1@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <div class="hero-image-wrapper">
+          <div class="hero-ring ring-1"></div>
+          <div class="hero-ring ring-2"></div>
+          <div class="hero-ring ring-3"></div>
+          <img src="assets/photo.png" alt="Iddah Chelangat" class="hero-photo" />
+          <div class="hero-badge badge-top">
+            <i class="fas fa-code"></i>
+            <span>Full Stack Dev</span>
+          </div>
+          <div class="hero-badge badge-bottom">
+            <i class="fas fa-star"></i>
+            <span>Open to Work</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-down" aria-label="Scroll down">
+      <div class="scroll-arrow"></div>
+    </a>
+  </section>
+
+  <!-- ======= ABOUT ======= -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Who I Am</span>
+        <h2>About Me</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-image reveal">
+          <div class="about-img-frame">
+            <img src="assets/image.png" alt="Iddah Chelangat" />
+          </div>
+          <div class="about-location-pill">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Eldoret, Kenya</span>
+          </div>
+        </div>
+        <div class="about-content reveal">
+          <p>
+            I'm a <strong>final-year Computer Science student</strong> at the University of Eldoret,
+            graduating in December 2026. I build websites and web apps — from polished frontends
+            to full backend systems.
+          </p>
+          <p>
+            My journey into tech started with curiosity about how things on the internet work,
+            and turned into a full-on passion for building them. I love writing clean code,
+            solving real problems, and shipping products that people actually use.
+          </p>
+          <p>
+            When I'm not coding, I'm exploring new frameworks, contributing to projects,
+            or thinking about the next thing to build.
+            I also enjoy watching movies and reading novels — it keeps me inspired and balanced outside of tech.
+            <!-- PLACEHOLDER: Add a personal touch or hobby here if you'd like -->
+          </p>
+          <div class="about-stats">
+            <div class="stat-card">
+              <span class="stat-num">2+</span>
+              <span class="stat-label">Live Projects</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">9+</span>
+              <span class="stat-label">Technologies</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-num">2026</span>
+              <span class="stat-label">Graduating</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= PROJECTS ======= -->
+  <section id="projects" class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">What I've Built</span>
+        <h2>Projects</h2>
+      </div>
+      <div class="projects-grid">
+
+        <!-- Project: Holy Verse -->
+        <div class="project-card reveal">
+          <div class="project-preview">
+            <!-- PLACEHOLDER: Save a screenshot as assets/holy-verse-preview.jpg -->
+            <div class="project-preview-fallback" style="background: linear-gradient(135deg, #1a0a2e, #4a1080);">
+              <i class="fas fa-book-open"></i>
+            </div>
+            <img src="assets/holyy-verse-preview.png" alt="Holy Verse preview" class="project-screenshot"
+                 onload="this.style.opacity=1; this.previousElementSibling.style.display='none'">
+            <div class="project-overlay">
+              <a href="https://holy-verse.web.app" target="_blank" rel="noopener" class="overlay-btn">
+                <i class="fas fa-external-link-alt"></i> Visit Site
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-live-badge"><span class="live-dot"></span> Live</span>
+            <h3>Holy Verse</h3>
+            <p>
+              <!-- PLACEHOLDER: Write a 2-3 sentence description of Holy Verse.
+                   What does it do? Who is it for? What problem does it solve? -->
+                   Holy Verse is a minimalist Bible reading web app designed for easy access to scripture. It is meant for people who want to learn more about God. 
+                   It offers a clean, distraction-free interface for exploring and reading Bible verses online. Built for anyone seeking a seamless spiritual reading experience on the web.
+              A web app for exploring and reading Bible verses with a clean, distraction-free interface.
+              Built for anyone seeking a seamless spiritual reading experience online.
+            </p>
+            <div class="project-tags">
+              <!-- PLACEHOLDER: Update with your actual tech stack -->
+              <span>JavaScript</span>
+              <span>HTML/CSS</span>
+              <span>Firebase</span>
+              <span>Node.js</span>
+              <span>Express.js</span>
+              <span>SQL</span>
+            </div>
+            <div class="project-links">
+              <a href="https://holy-verse.web.app" target="_blank" rel="noopener">
+                <i class="fas fa-external-link-alt"></i> Live Site
+              </a>
+              <!-- PLACEHOLDER: Uncomment and fill in if repo is public -->
+              <a href="https://github.com/Iddah-chela/crunchy" target="_blank" rel="noopener">
+                <i class="fab fa-github"></i> Code
+              </a> 
+            </div>
+          </div>
+        </div>
+
+        <!-- Project: Patakejaa -->
+        <div class="project-card reveal">
+          <div class="project-preview">
+            <!-- PLACEHOLDER: Save a screenshot as assets/patakejaa-preview.png -->
+            <div class="project-preview-fallback" style="background: linear-gradient(135deg, #0d1f3c, #1a4a6e);">
+              <i class="fas fa-globe-africa"></i>
+            </div>
+            <img src="assets/patakejaa-preview.png" alt="Patakejaa preview" class="project-screenshot"
+                 onload="this.style.opacity=1; this.previousElementSibling.style.display='none'">
+            <div class="project-overlay">
+              <a href="https://patakejaa.co.ke" target="_blank" rel="noopener" class="overlay-btn">
+                <i class="fas fa-external-link-alt"></i> Visit Site
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-live-badge"><span class="live-dot"></span> Live</span>
+            <h3>Patakejaa</h3>
+            <p>
+              <!-- PLACEHOLDER: Write a 2-3 sentence description of Patakejaa.
+                   What does it do? Who is it for? What problem does it solve? -->
+                   PataKejaa is a Kenyan web platform built to help local users find affordable housing and rentals. 
+                   It offers a user-friendly interface for browsing listings, connecting landlords with tenants, and providing resources for the local real estate market.
+                   Designed to serve the needs of the Kenyan community with performance and user experience at its core.
+              A Kenyan web platform built to serve a local audience with performance and
+              user experience at its core.
+            </p>
+            <div class="project-tags">
+              <!-- PLACEHOLDER: Update with your actual tech stack -->
+              <span>JavaScript</span>
+              <span>Node.js</span>
+              <span>React</span>
+              <span>Tailwind CSS</span>
+              <span>Node.js</span>
+              <span>MongoDB</span>
+            </div>
+            <div class="project-links">
+              <a href="https://patakejaa.co.ke" target="_blank" rel="noopener">
+                <i class="fas fa-external-link-alt"></i> Live Site
+              </a>
+              <!-- PLACEHOLDER: Uncomment if public -->
+              <a href="https://github.com/Iddah-chela/housing" target="_blank" rel="noopener">
+                <i class="fab fa-github"></i> Code
+              </a> 
+            </div>
+          </div>
+        </div>
+
+        <!-- Coming Soon #1 -->
+        <div class="project-card coming-soon reveal">
+          <div class="coming-icon"><i class="fas fa-hammer"></i></div>
+          <h3><!-- PLACEHOLDER: Project name --><br/>Coming Soon</h3>
+          <p>
+            <!-- PLACEHOLDER: One-liner about what you're building -->
+            Something cool is in the works...
+          </p>
+          <span class="wip-badge">In Progress</span>
+        </div>
+
+        <!-- Coming Soon #2 -->
+        <div class="project-card coming-soon reveal">
+          <div class="coming-icon"><i class="fas fa-rocket"></i></div>
+          <h3><!-- PLACEHOLDER: Project name --><br/>Coming Soon</h3>
+          <p>
+            <!-- PLACEHOLDER: One-liner about what you're building -->
+            Another project launching soon...
+          </p>
+          <span class="wip-badge">In Progress</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= SKILLS ======= -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">What I Work With</span>
+        <h2>Skills</h2>
+      </div>
+      <div class="skills-wrapper">
+
+        <div class="skills-group reveal">
+          <h3 class="skills-group-title">Frontend</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5" />
+              <span>HTML5</span>
+            </div>
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3" />
+              <span>CSS3</span>
+            </div>
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" />
+              <span>JavaScript</span>
+            </div>
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" />
+              <span>React</span>
+            </div>
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS"
+                   onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg'" />
+              <span>Tailwind CSS</span>
+            </div>
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++"/>
+              <span>C++</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-group reveal">
+          <h3 class="skills-group-title">Backend & Mobile</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+              <span>Node.js</span>
+            </div>
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React Native" />
+              <span>React Native</span>
+            </div>
+          </div>
+          
+        </div>
+
+        <div class="skills-group reveal">
+          <h3 class="skills-group-title">Database</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="SQL" />
+              <span>SQL</span>
+            </div>
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" />
+              <span>PostgreSQL</span>
+            </div>
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
+              <span>MongoDB</span>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= EXPERIENCE & EDUCATION ======= -->
+  <section id="experience" class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">My Journey</span>
+        <h2>Experience & Education</h2>
+      </div>
+      <div class="experience-layout">
+
+        <div class="timeline reveal">
+          <div class="timeline-item">
+            <div class="tl-dot"></div>
+            <div class="tl-body">
+              <span class="tl-date">
+                <!-- PLACEHOLDER: Confirm your exact start year at UoE -->
+                2022 — Dec 2026
+              </span>
+              <h3>University of Eldoret</h3>
+              <p class="tl-role">
+                BSc in Information Technology
+                <!-- PLACEHOLDER: Confirm your exact degree name/title -->
+              </p>
+              <p class="tl-desc">
+                Studying core information technology and computer concepts, software engineering, databases,
+                and systems design. Building real-world projects alongside coursework.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="tl-dot"></div>
+            <div class="tl-body">
+              <span class="tl-date">2023 — Present</span>
+              <h3>Independent Projects</h3>
+              <p class="tl-role">Self-Taught Full Stack Developer</p>
+              <p class="tl-desc">
+                Shipped two live projects — <a href="https://holy-verse.web.app" target="_blank" rel="noopener">Holy Verse</a> and
+                <a href="https://patakejaa.co.ke" target="_blank" rel="noopener">Patakejaa</a> — while continuously
+                learning new technologies and building in public.
+              </p>
+            </div>
+          </div>
+
+          <!-- PLACEHOLDER: Add any internships, attachments, or freelance work below
+          <div class="timeline-item">
+            <div class="tl-dot"></div>
+            <div class="tl-body">
+              <span class="tl-date">Month Year — Month Year</span>
+              <h3>Company / Organization Name</h3>
+              <p class="tl-role">Your Role</p>
+              <p class="tl-desc">Brief description of what you did.</p>
+            </div>
+          </div>
+          -->
+        </div>
+
+        <div class="github-stats reveal">
+          <h3>GitHub at a Glance</h3>
+          <div class="github-cards">
+            <img
+              src="https://github-readme-stats.vercel.app/api?username=Iddah-chela&show_icons=true&hide_border=true&bg_color=1a0a2e&title_color=c77dff&icon_color=9d4edd&text_color=c8b4e3&rank_icon=github"
+              alt="GitHub Stats"
+              class="gh-card"
+              id="ghStats"
+            />
+            <img
+              src="https://github-readme-stats.vercel.app/api/top-langs/?username=Iddah-chela&layout=compact&hide_border=true&bg_color=1a0a2e&title_color=c77dff&text_color=c8b4e3"
+              alt="Top Languages"
+              class="gh-card"
+              id="ghLangs"
+            />
+            <img
+              src="https://streak-stats.demolab.com/?user=Iddah-chela&hide_border=true&background=1a0a2e&ring=9d4edd&fire=c77dff&currStreakLabel=c8b4e3&sideLabels=c8b4e3&dates=8a7a9b"
+              alt="GitHub Streak"
+              class="gh-card"
+              id="ghStreak"
+            />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= CERTIFICATIONS ======= -->
+  <section id="certifications" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Credentials</span>
+        <h2>Certifications</h2>
+        <p class="section-sub">
+          <!-- PLACEHOLDER: Go to sololearn.com → My Profile → Certificates to get your real certificate links -->
+        </p>
+      </div>
+      <div class="certs-grid">
+
+        <div class="cert-card reveal">
+          <div class="cert-icon-wrap">
+            <img src="https://www.sololearn.com/favicon.ico" alt="SoloLearn"
+                 onerror="this.parentElement.innerHTML='<span class=cert-emoji>📜</span>'" />
+          </div>
+          <div class="cert-details">
+            <span class="cert-issuer">SoloLearn</span>
+            <h3>Introduction to C++</h3>
+            <!-- PLACEHOLDER: Replace # with your real SoloLearn certificate URL -->
+            <a href="https://api2.sololearn.com/v2/certificates/CT-RPSUYZDH/image/png?t=639088401155566960" class="cert-link" target="_blank" rel="noopener">
+              View Certificate <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-icon-wrap">
+            <img src="https://www.sololearn.com/favicon.ico" alt="SoloLearn"
+                 onerror="this.parentElement.innerHTML='<span class=cert-emoji>📜</span>'" />
+          </div>
+          <div class="cert-details">
+            <span class="cert-issuer">SoloLearn</span>
+            <h3>HTML</h3>
+            <!-- PLACEHOLDER: Replace # with your real SoloLearn certificate URL -->
+            <a href="https://api2.sololearn.com/v2/certificates/CC-HUHIJHKA/image/png?t=639088401404625700" class="cert-link" target="_blank" rel="noopener">
+              View Certificate <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+
+       <!-- <div class="cert-card reveal">
+          <div class="cert-icon-wrap">
+            <img src="https://www.sololearn.com/favicon.ico" alt="SoloLearn"
+                 onerror="this.parentElement.innerHTML='<span class=cert-emoji>📜</span>'" />
+          </div>
+          <div class="cert-details">
+            <span class="cert-issuer">SoloLearn</span>
+            <h3>CSS</h3>
+             PLACEHOLDER: Replace # with your real SoloLearn certificate URL 
+            <a href="https://api2.sololearn.com/v2/certificates/CC-HUHIJHKA/image/png?t=639088401404625700" class="cert-link" target="_blank" rel="noopener">
+              View Certificate <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>-->
+
+        <!-- PLACEHOLDER: Add more cert cards by copying the block above.
+             Add all your SoloLearn certs: Python, React, SQL, etc. -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= CURRENTLY BUILDING ======= -->
+  <section id="building" class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">What's Next</span>
+        <h2>Currently Building</h2>
+      </div>
+      <div class="building-grid">
+
+        <div class="building-card reveal">
+          <div class="building-header">
+            <span class="pulse-badge"><span class="pulse-dot"></span> Active</span>
+          </div>
+          <h3>Student marketplace</h3>
+          <p>
+            <!-- PLACEHOLDER: 1-2 sentences about what you're building and why -->
+            A web platform connecting university students to buy and sell household items, foodstuffs and even services. 
+            Built to make campus life more affordable and sustainable by facilitating peer-to-peer commerce.
+          </p>
+          <div class="building-tags">
+            <!-- PLACEHOLDER: Update techs being used -->
+            <span>React</span>
+            <span>Node.js</span>
+            <span>Express.js</span>
+            <span>MongoDB</span>
+          </div>
+        </div>
+
+        <div class="building-card reveal">
+          <div class="building-header">
+            <span class="pulse-badge"><span class="pulse-dot"></span> Active</span>
+          </div>
+          <h3>An Emergency App</h3>
+          <p>
+            <!-- PLACEHOLDER: 1-2 sentences about what you're building and why -->
+            A mobile app designed to quickly connect users with emergency services and trusted contacts during crises.
+            It provides one-tap access to call for help, share location, and send alerts to loved ones, aiming to enhance personal safety and response times in emergencies.
+          </p>
+          <div class="building-tags">
+            <!-- PLACEHOLDER: Update techs being used -->
+            <span>React Native</span>
+            <span>Node.js</span>
+            <span>Express.js</span>
+            <span>SQLite</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= CONTACT ======= -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Let's Talk</span>
+        <h2>Get In Touch</h2>
+        <p class="section-sub">
+          I'm open to collaborations, cool projects, and opportunities. Say hello!
+        </p>
+      </div>
+      <div class="contact-layout">
+
+        <div class="contact-info reveal">
+          <a href="mailto:iddahchelangat1@gmail.com" class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <span class="contact-label">Email</span>
+              <p>iddahchelangat1@gmail.com</p>
+            </div>
+          </a>
+          <a href="https://wa.me/254112877755" target="_blank" rel="noopener" class="contact-item">
+            <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+            <div>
+              <span class="contact-label">WhatsApp</span>
+              <p>+254 112 877 755</p>
+            </div>
+          </a>
+          <a href="https://linkedin.com/in/iddah-supergirl-662a89255" target="_blank" rel="noopener" class="contact-item">
+            <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+            <div>
+              <span class="contact-label">LinkedIn</span>
+              <p>Iddah Chelangat</p>
+            </div>
+          </a>
+          <a href="https://github.com/Iddah-chela" target="_blank" rel="noopener" class="contact-item">
+            <div class="contact-icon"><i class="fab fa-github"></i></div>
+            <div>
+              <span class="contact-label">GitHub</span>
+              <p>@Iddah-chela</p>
+            </div>
+          </a>
+          <div class="contact-item no-link">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <span class="contact-label">Location</span>
+              <p>Eldoret, Kenya 🇰🇪</p>
+            </div>
+          </div>
+        </div>
+
+        <form
+          class="contact-form reveal"
+          id="contactForm"
+          action="https://formspree.io/f/xzdjgnzl"
+          method="POST"
+          novalidate
+        >
+          <!-- PLACEHOLDER: To make this form actually send emails, sign up at formspree.io
+               and replace action="#" with your Formspree URL, e.g. action="https://formspree.io/f/YOUR_ID"
+               Or use EmailJS for a JS-only solution: emailjs.com -->
+          <div class="form-field">
+            <input type="text" id="fname" name="name" placeholder=" " required autocomplete="name" />
+            <label for="fname">Your Name</label>
+          </div>
+          <div class="form-field">
+            <input type="email" id="femail" name="email" placeholder=" " required autocomplete="email" />
+            <label for="femail">Your Email</label>
+          </div>
+          <div class="form-field">
+            <textarea id="fmessage" name="message" placeholder=" " rows="5" required></textarea>
+            <label for="fmessage">Your Message</label>
+          </div>
+          <button type="submit" class="btn-primary btn-full">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+          <p class="form-note" id="formStatus"></p>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= FOOTER ======= -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">IC</div>
+      <p>Designed &amp; Built by <strong>Iddah Chelangat</strong> · Eldoret, Kenya 🇰🇪</p>
+      <div class="footer-socials">
+        <a href="https://github.com/Iddah-chela" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/iddah-supergirl-662a89255" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://wa.me/254112877755" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="mailto:iddahchelangat1@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+      <p class="footer-copy">&copy; 2026 Iddah Chelangat. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
