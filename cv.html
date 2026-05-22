@@ -323,6 +323,7 @@
         padding: 0;
         background: #fff;
         overflow: hidden;
+        counter-reset: page 1;
       }
 
       .print-bar { display: none !important; }
@@ -336,6 +337,7 @@
         border-radius: 0;
         box-shadow: none;
         overflow: hidden;
+        position: relative;
       }
 
       .cv-sidebar {
@@ -381,6 +383,9 @@
         margin-bottom: 10px;
         padding-bottom: 10px;
       }
+      /* Print footer with automatic page numbers (appears on each PDF page) */
+      /* Hide page footer when printing (user prefers no page numbers) */
+      .cv-page .page-footer { display: none !important; }
     }
 
     /* ======= RESPONSIVE ======= */
@@ -495,11 +500,9 @@
       <div class="cv-main-section">
         <p class="cv-main-title">Profile</p>
         <p class="cv-summary">
-          Final-year Computer Science student at the University of Eldoret (graduating December 2026)
-          with hands-on experience building full-stack web applications. I design, develop, and deploy
-          real-world projects using JavaScript, React, Node.js, and PostgreSQL. Passionate about clean
-          code, great UX, and shipping products people love.
-          <!-- PLACEHOLDER: Personalise or expand this summary to better reflect your story -->
+          Full Stack Developer with hands-on experience building full-stack web applications. I design,
+          develop, and deploy real-world projects using JavaScript, React, Node.js, and PostgreSQL.
+          Passionate about clean code, great UX, and shipping products people love.
         </p>
       </div>
 
@@ -611,18 +614,18 @@
 
       </div>
 
-      <!-- References (optional) -->
+      <!-- References -->
       <div class="cv-main-section">
         <p class="cv-main-title">References</p>
-        <p style="font-size:0.83rem; color:#6b5a7a;">
-          <!-- PLACEHOLDER: Add 1-2 academic or professional references here, or remove this section -->
-          Available on request.
-        </p>
+        <div class="cv-entry" style="font-size:0.83rem; color:#6b5a7a;">
+          <p>Referees available upon request.</p>
+        </div>
       </div>
 
     </main>
 
   </div><!-- end .cv-page -->
+  <div class="page-footer" aria-hidden="true"></div>
 
 </body>
 </html>

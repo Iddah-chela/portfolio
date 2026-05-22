@@ -90,6 +90,7 @@
       min-height: 297mm;
       display: flex;
       flex-direction: column;
+      position: relative;
     }
 
     .sheet:last-child { margin-bottom: 0; }
@@ -333,6 +334,10 @@
     @media print {
       @page { size: A4 portrait; margin: 0; }
 
+      html, body {
+        counter-reset: page 1;
+      }
+
       body {
         background: #fff;
       }
@@ -369,9 +374,27 @@
         gap: 6mm;
       }
 
+      /* Prevent awkward page breaks inside logical blocks */
+      .section, .entry, .project, .skills-grid, .cert-list, .chips, .contact-row {
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+
+      /* Keep headings with at least two lines of following content */
+      .section h2 { page-break-after: avoid; }
+
+      /* Reduce widows/orphans to avoid single-line leftovers */
+      p, li, .summary, .entry p, .entry ul { widows: 2; orphans: 2; }
+
       .footer-note {
         padding: 4mm 14mm 6mm;
+        display: none; /* hide the interactive footer in print; use .print-footer instead */
       }
+
+      /* Print footer with automatic page numbers (appears on each PDF page) */
+      /* Hide any generated footers in the printed PDF */
+      .sheet .sheet-footer,
+      .print-footer { display: none !important; }
 
       a {
         color: inherit;
@@ -418,8 +441,9 @@
           <p class="title">Full Stack Developer</p>
           <div class="contact-row">
             <span><i class="fas fa-envelope"></i> iddahchelangat1@gmail.com</span>
-            <span><i class="fab fa-whatsapp"></i> +254 112 877 755</span>
-            <span><i class="fas fa-location-dot"></i> Eldoret, Kenya</span>
+            <span><i class="fab fa-whatsapp"></i> +254 112877755</span>
+            <span><i class="fas fa-phone"></i> +254 112877755</span>
+            <span><i class="fas fa-map-marker-alt"></i> Box 5645-30100 Eldoret</span>
             <a href="https://github.com/Iddah-chela" target="_blank" rel="noopener"><i class="fab fa-github"></i> github.com/Iddah-chela</a>
             <a href="https://linkedin.com/in/iddah-supergirl-662a89255" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> linkedin.com/in/iddah-supergirl-662a89255</a>
           </div>
@@ -430,7 +454,7 @@
         <section class="section full">
           <h2>Professional Summary</h2>
           <p class="summary">
-            Final-year university student and full stack developer focused on building practical, user-friendly web products.
+            Full stack developer focused on building practical, user-friendly web products.
             Experienced in shipping end-to-end projects from UI implementation and API design to deployment and iteration.
             Strong interest in scalable application architecture, developer experience, and solving local community problems with technology.
           </p>
@@ -441,13 +465,28 @@
           <div class="entry">
             <div class="entry-top">
               <h3>University of Eldoret</h3>
-              <span class="date">2022 - Dec 2026</span>
+              <span class="date">2024 - Present</span>
             </div>
-            <p class="subtitle">BSc in Information Technology</p>
+            <p class="subtitle">Bachelor of Science in Information Technology</p>
             <p>
-              Coursework includes software engineering, database systems, web technologies, networking,
-              and systems analysis. Built practical projects while balancing academic work and self-directed learning.
+              University of Eldoret — BSc Information Technology. Relevant coursework: software engineering, databases, web development, systems analysis.
             </p>
+          </div>
+
+          <div class="entry">
+            <div class="entry-top">
+              <h3>Sacho High School</h3>
+              <span class="date">2021</span>
+            </div>
+            <p class="subtitle">O-Levels (KCSE)</p>
+          </div>
+
+          <div class="entry">
+            <div class="entry-top">
+              <h3>Hermann Gmeiner School, Eldoret</h3>
+              <span class="date">2017</span>
+            </div>
+            <p class="subtitle">KCPE</p>
           </div>
         </section>
 
@@ -464,15 +503,14 @@
             <div><span>MongoDB</span></div>
           </div>
           <div class="entry" style="margin-top:10px;">
-            <p class="subtitle">Skill Depth (self-assessed)</p>
-            <p style="font-size:0.78rem; color:#7a6a8e; margin:0 0 3px;">JavaScript</p>
-            <div class="bar"><span style="width:85%"></span></div>
-            <p style="font-size:0.78rem; color:#7a6a8e; margin:7px 0 3px;">React</p>
-            <div class="bar"><span style="width:78%"></span></div>
-            <p style="font-size:0.78rem; color:#7a6a8e; margin:7px 0 3px;">Node.js / Express</p>
-            <div class="bar"><span style="width:74%"></span></div>
-            <p style="font-size:0.78rem; color:#7a6a8e; margin:7px 0 3px;">SQL / PostgreSQL</p>
-            <div class="bar"><span style="width:70%"></span></div>
+            <p class="subtitle">Skills Acquired</p>
+            <ul>
+              <li>Coding and programming (JavaScript, HTML/CSS, C++ fundamentals)</li>
+              <li>Excellent communication, planning and organizational capabilities</li>
+              <li>Determined and decisive — uses initiative to develop effective solutions</li>
+              <li>Quality-focused — applies process and discipline to optimize performance</li>
+              <li>Self-starter and adaptable team-worker with strong analytical skills</li>
+            </ul>
           </div>
         </section>
 
@@ -485,10 +523,32 @@
             </div>
             <p class="subtitle">Self-Directed Developer</p>
             <ul>
-              <li>Designed and deployed live products from scratch, including frontend, backend, and database workflows.</li>
-              <li>Implemented responsive interfaces, authentication flows, API integrations, and production deployment fixes.</li>
-              <li>Practiced iterative delivery by collecting user feedback and improving UX, performance, and reliability over time.</li>
-              <li>Maintained GitHub repositories with consistent commits, version control hygiene, and feature-based branching.</li>
+              <li>Designed and deployed live web products including frontend, backend and database integrations.</li>
+              <li>Implemented responsive UI, authentication, API integrations, and deployment workflows.</li>
+              <li>Practiced iterative delivery: collected feedback and improved UX, performance, and reliability.</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div class="entry-top">
+              <h3>YARA / OCP — Data Collection & Entry (KALRO, Kitale)</h3>
+              <span class="date">May - Aug 2024</span>
+            </div>
+            <p class="subtitle">Data Collector / Data Entry</p>
+            <ul>
+              <li>Collected and entered large datasets for fertilizer validation across research plots at KALRO-FCRI.</li>
+              <li>Ensured data accuracy and followed project data standards during intensive fieldwork.</li>
+            </ul>
+          </div>
+
+          <div class="entry">
+            <div class="entry-top">
+              <h3>Community Outreach — Trans-Nzoia</h3>
+              <span class="date">2023</span>
+            </div>
+            <p class="subtitle">Volunteer</p>
+            <ul>
+              <li>Organised donation drives (wheelchairs), supported treatment of jiggers, and assisted widows and orphans.</li>
             </ul>
           </div>
         </section>
@@ -497,6 +557,7 @@
       <div class="footer-note">
         Page 1 of 2 · Extended CV 
       </div>
+      <div class="sheet-footer" aria-hidden="true"></div>
     </section>
 
     <section class="sheet">
@@ -507,8 +568,11 @@
           <p class="title">Selected Projects, Certifications & Additional Details</p>
           <div class="contact-row">
             <span><i class="fas fa-envelope"></i> iddahchelangat1@gmail.com</span>
-            <span><i class="fab fa-whatsapp"></i> +254 112 877 755</span>
-            <span><i class="fas fa-location-dot"></i> Eldoret, Kenya</span>
+            <span><i class="fab fa-whatsapp"></i> +254 112877755</span>
+            <span><i class="fas fa-phone"></i> +254 112877755</span>
+            <span><i class="fas fa-map-marker-alt"></i> Box 5645-30100 Eldoret</span>
+            <a href="https://github.com/Iddah-chela" target="_blank" rel="noopener"><i class="fab fa-github"></i> github.com/Iddah-chela</a>
+            <a href="https://linkedin.com/in/iddah-supergirl-662a89255" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> linkedin.com/in/iddah-supergirl-662a89255</a>
           </div>
         </div>
       </header>
@@ -550,9 +614,9 @@
           </article>
 
           <article class="project">
-            <h3>Student Marketplace (In Progress)</h3>
+            <h3>Campus Marketplace (In Progress)</h3>
             <p>
-              A campus-focused commerce app where students can buy, sell, and exchange household essentials and services.
+              A campus-focused marketplace app where users can buy, sell, and exchange household essentials and services.
               Emphasis on affordability, trust, and local discovery.
             </p>
             <div class="chips">
@@ -579,18 +643,21 @@
         </section>
 
         <section class="section">
-          <h2>Certifications</h2>
-          <ul class="cert-list">
-            <li>
-              <strong>SoloLearn - Introduction to C++</strong><br />
-              <a href="https://api2.sololearn.com/v2/certificates/CT-RPSUYZDH/image/png?t=639088401155566960" target="_blank" rel="noopener">View certificate</a>
-            </li>
-            <li>
-              <strong>SoloLearn - HTML</strong><br />
-              <a href="https://api2.sololearn.com/v2/certificates/CC-HUHIJHKA/image/png?t=639088401404625700" target="_blank" rel="noopener">View certificate</a>
-            </li>
-            
-          </ul>
+          <h2>Other Activities & Training Courses</h2>
+          <div class="entry">
+            <ul>
+              <li>2015–2022: First Aid training, school certificates and community workshops</li>
+              <li>Volunteer activities: organising wheelchair drives, jigger treatment programs, support for widows and orphans</li>
+              <li>Short courses and online training: web development foundations, basic data handling and entry</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Referees</h2>
+          <div class="entry" style="font-size:0.84rem; color:var(--muted);">
+            <p>Referees available upon request.</p>
+          </div>
         </section>
 
         <section class="section">
@@ -603,17 +670,16 @@
             <h3 style="font-size:0.9rem; margin:0 0 5px;">Interests</h3>
             <p>Reading novels, watching films, exploring new technologies, and continuous learning.</p>
           </div>
-          <div class="entry">
-            <h3 style="font-size:0.9rem; margin:0 0 5px;">References</h3>
-            <p>Available on request.</p>
-          </div>
+          
         </section>
       </div>
 
       <div class="footer-note">
         Page 2 of 2 · Extended CV · Tip: include quantifiable outcomes per project to strengthen recruiter impact.
       </div>
+      <div class="sheet-footer" aria-hidden="true"></div>
     </section>
   </div>
+  <div class="print-footer" aria-hidden="true"></div>
 </body>
 </html>
