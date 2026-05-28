@@ -204,10 +204,12 @@ function highlightActiveNav() {
 
   const words = [
     'Full Stack Developer',
+    'Business Website Builder',
     'Web App Builder',
+    'Freelance Web Partner',
     'Problem Solver',
     'UI Crafter',
-    'Kenyan Dev 🇰🇪',
+    'Open to Roles & Clients',
   ];
 
   let wordIdx = 0;
