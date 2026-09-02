@@ -462,7 +462,7 @@ strong { font-weight: 600; }
   width: calc(100% - 56px);
   height: calc(100% - 56px);
   object-fit: cover;
-  border-radius: var(--radius-lg);
+  border-radius: 50%0%50%0%;
   z-index: 3;
   box-shadow: var(--shadow), 0 0 40px var(--glow);
 }
@@ -544,7 +544,7 @@ strong { font-weight: 600; }
 
 .about-img-frame {
   position: relative;
-  border-radius: var(--radius-lg);
+  border-radius: 50%20%/10%40%;
   overflow: hidden;
   aspect-ratio: 4/5;
 }
